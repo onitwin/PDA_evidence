@@ -8,71 +8,71 @@ class TestPetShop < Minitest::Test
 
   def setup
 
-    @customers = [
-      {
+    @customers = [ #array
+      {#hash
         name: "Alice",
-        pets: [],
+        pets: [],#array within hash within array
         cash: 1000
       },
       {
         name: "Bob",
-        pets: [],
+        pets: [],#array within hash within array
         cash: 50
       },
       {
         name: "Jack",
-        pets: [],
+        pets: [],#array within hash
         cash: 100
       }
     ]
 
-    @new_pet = {
+    @new_pet = {#array
       name: "Bors the Younger",
       pet_type: :cat,
       breed: "Cornish Rex",
       price: 100
     }
 
-    @pet_shop = {
-      pets: [
-        {
+    @pet_shop = {#hash
+      pets: [#array within hash creating a list of hashes
+        {#hash within array within hash
           name: "Sir Percy",
           pet_type: :cat,
           breed: "British Shorthair",
           price: 500
         },
-        {
+        {#hash within array within hash
           name: "King Bagdemagus",
           pet_type: :cat,
           breed: "British Shorthair",
           price: 500
         },
-        {
+        {#hash within array within hash
           name: "Sir Lancelot",
           pet_type: :dog,
           breed: "Pomsky",
           price: 1000,
         },
-        {
+        {#hash within array within hash
           name: "Arthur",
           pet_type: :dog,
           breed: "Husky",
           price: 900,
         },
-        {
+        {#hash within array within hash
           name: "Tristan",
           pet_type: :dog,
           breed: "Basset Hound",
           price: 800,
         },
-        {
+        {#hash within array within hash
           name: "Merlin",
           pet_type: :cat,
           breed: "Egyptian Mau",
           price: 1500,
         }
-      ],
-      admin: {
+      ],#end of array within hash
+      admin: {#start of new hash within hash
         total_cash: 1000,
         pets_sold: 0,
       },
