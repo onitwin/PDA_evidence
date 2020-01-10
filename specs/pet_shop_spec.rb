@@ -8,71 +8,71 @@ class TestPetShop < Minitest::Test
 
   def setup
 
-    @customers = [ #array
-      {#hash
+    @customers = [
+      {
         name: "Alice",
-        pets: [],#array within hash within array
+        pets: [],
         cash: 1000
       },
       {
         name: "Bob",
-        pets: [],#array within hash within array
+        pets: [],
         cash: 50
       },
       {
         name: "Jack",
-        pets: [],#array within hash
+        pets: [],
         cash: 100
       }
     ]
 
-    @new_pet = {#array
+    @new_pet = {
       name: "Bors the Younger",
       pet_type: :cat,
       breed: "Cornish Rex",
       price: 100
     }
 
-    @pet_shop = {#hash
-      pets: [#array within hash creating a list of hashes
-        {#hash within array within hash
+    @pet_shop = {
+      pets: [
+        {
           name: "Sir Percy",
           pet_type: :cat,
           breed: "British Shorthair",
           price: 500
         },
-        {#hash within array within hash
+        {
           name: "King Bagdemagus",
           pet_type: :cat,
           breed: "British Shorthair",
           price: 500
         },
-        {#hash within array within hash
+        {
           name: "Sir Lancelot",
           pet_type: :dog,
           breed: "Pomsky",
           price: 1000,
         },
-        {#hash within array within hash
+        {
           name: "Arthur",
           pet_type: :dog,
           breed: "Husky",
           price: 900,
         },
-        {#hash within array within hash
+        {
           name: "Tristan",
           pet_type: :dog,
           breed: "Basset Hound",
           price: 800,
         },
-        {#hash within array within hash
+        {
           name: "Merlin",
           pet_type: :cat,
           breed: "Egyptian Mau",
           price: 1500,
         }
-      ],#end of array within hash
-      admin: {#start of new hash within hash
+      ],
+      admin: {
         total_cash: 1000,
         pets_sold: 0,
       },
@@ -113,15 +113,15 @@ class TestPetShop < Minitest::Test
   #   assert_equal(2, sold)
   # end
 
-  def test_stock_count
-    count = stock_count(@pet_shop)
-    assert_equal(6, count)
-  end
-
-  # def test_all_pets_by_breed__found
-  #   pets = pets_by_breed(@pet_shop, "British Shorthair")
-  #   assert_equal(2, pets.count)
+  # def test_stock_count
+  #   count = stock_count(@pet_shop)
+  #   assert_equal(6, count)
   # end
+
+  def test_all_pets_by_breed__found
+    pets = pets_by_breed(@pet_shop, "British Shorthair")
+    assert_equal(2, pets.count)
+  end
 
   # def test_all_pets_by_breed__not_found
   #   pets = pets_by_breed(@pet_shop, "Dalmation")

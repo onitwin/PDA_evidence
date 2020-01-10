@@ -27,3 +27,13 @@ end
 def stock_count(shop)
   return shop[:pets].length
 end
+
+def pets_by_breed(pet_shop,type)
+  count=[]
+  for pet in pet_shop[:pets]
+    if pet[:breed] == type
+      count.push(pet[:breed])
+    end
+  end
+  return count #for reference, i had thuis out of scope so noting for myself to remind me of importance
+end
