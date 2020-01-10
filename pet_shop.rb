@@ -37,3 +37,11 @@ def pets_by_breed(pet_shop,type)
   end
   return count #for reference, i had thuis out of scope so noting for myself to remind me of importance
 end
+
+def find_pet_by_name(shop, name)
+  for dog_name in shop[:pets]
+    if dog_name[:name]==name
+      return dog_name
+    end
+  end
+end
