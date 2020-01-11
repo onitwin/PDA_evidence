@@ -12,10 +12,6 @@ def add_or_remove_cash(shop,value)
   shop[:admin][:total_cash] += value
 end
 
-def add_or_remove_cash(shop,value)
-  shop[:admin][:total_cash] += value
-end
-
 def pets_sold (shop)
   return shop[:admin][:pets_sold]
 end
@@ -35,7 +31,7 @@ def pets_by_breed(pet_shop,type)
       count.push(pet[:breed])
     end
   end
-  return count #for reference, i had thuis out of scope so noting for myself to remind me of importance
+  return count #for reference, i had this out of scope so noting for myself to remind me of importance
 end
 
 def find_pet_by_name(shop, name)
@@ -88,3 +84,26 @@ def customer_can_afford_pet(customer,pet)
 end
 
 #integration tests
+def sell_pet_to_customer(shop,pet,customer)
+  if customer_can_afford_pet(customer,pet) == true
+    add_pet_to_customer(customer,pet)
+    remove_pet_by_name(shop,pet)
+    remove_customer_cash(customer,pet[:price])
+    add_or_remove_cash(shop,pet[:price])
+    increase_pets_sold(shop,1)
+  end
+end
+
+# def sell_pet_to_customer(shop,pet,customer)
+#   if find_pet_by_name(shop,pet)==nil
+#     return nil
+#   else
+#     if customer_can_afford_pet(customer,pet) == true
+#       add_pet_to_customer(customer,pet)
+#       remove_pet_by_name(shop,pet)
+#       remove_customer_cash(customer,pet[:price])
+#       add_or_remove_cash(shop,pet[:price])
+#       increase_pets_sold(shop,1)
+#     end
+#   end
+# end
