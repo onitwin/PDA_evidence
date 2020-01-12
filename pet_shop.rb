@@ -84,26 +84,37 @@ def customer_can_afford_pet(customer,pet)
 end
 
 #integration tests
-def sell_pet_to_customer(shop,pet,customer)
-  if customer_can_afford_pet(customer,pet) == true
-    add_pet_to_customer(customer,pet)
-    remove_pet_by_name(shop,pet)
-    remove_customer_cash(customer,pet[:price])
-    add_or_remove_cash(shop,pet[:price])
-    increase_pets_sold(shop,1)
-  end
-end
-
 # def sell_pet_to_customer(shop,pet,customer)
-#   if find_pet_by_name(shop,pet)==nil
-#     return nil
-#   else
-#     if customer_can_afford_pet(customer,pet) == true
-#       add_pet_to_customer(customer,pet)
-#       remove_pet_by_name(shop,pet)
-#       remove_customer_cash(customer,pet[:price])
-#       add_or_remove_cash(shop,pet[:price])
-#       increase_pets_sold(shop,1)
-#     end
+#   if customer_can_afford_pet(customer,pet) == true
+#     add_pet_to_customer(customer,pet)
+#     remove_pet_by_name(shop,pet)
+#     remove_customer_cash(customer,pet[:price])
+#     add_or_remove_cash(shop,pet[:price])
+#     increase_pets_sold(shop,1)
 #   end
 # end
+
+# def sell_pet_to_customer(shop,pet,customer)
+#   if find_pet_by_name(shop,pet) != nil
+#     customer_can_afford_pet(customer,pet) == true
+#     add_pet_to_customer(customer,pet)
+#     remove_pet_by_name(shop,pet)
+#     remove_customer_cash(customer,pet[:price])
+#     add_or_remove_cash(shop,pet[:price])
+#     increase_pets_sold(shop,1)
+#   end
+# end
+
+
+#help from Steve to complete this- compare with code block two blocks above
+def sell_pet_to_customer(shop,pet,customer)
+  if pet != nil && customer_can_afford_pet(customer,pet)#this result returns true anyway and so my ==true in my version was not needed
+      add_pet_to_customer(customer,pet)
+      remove_pet_by_name(shop,pet)
+      remove_customer_cash(customer,pet[:price])
+      add_or_remove_cash(shop,pet[:price])
+      increase_pets_sold(shop,1)
+    end
+end
+
+#for my own reference ADD MORE COMMENTS as you goS

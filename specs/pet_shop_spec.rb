@@ -171,7 +171,7 @@ class TestPetShop < Minitest::Test
     add_pet_to_customer(customer, @new_pet)
     assert_equal(1, customer_pet_count(customer))
   end
-  #
+
   # # --- OPTIONAL ---
   #
   def test_customer_can_afford_pet__sufficient_funds
