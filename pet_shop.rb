@@ -54,12 +54,12 @@ end
 
 def add_pet_to_stock (shop,pet)
   shop[:pets].push(pet)
-  return shop[:pets].count
+  #return shop[:pets].count - not needed
 end
 
 def customer_cash (customer)
   cash=customer[:cash]
-  return cash
+  return cash #dose not need variable- can just use
 end
 
 def remove_customer_cash (customer, value)
